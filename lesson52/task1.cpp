@@ -48,10 +48,13 @@ public:
 };
 
 int main() {
-	Student st1;           //calling default contructor
-	Student st2("Ivan", "Ivanov", 14, 10 + );               //calling constructor with arg
+	///*Student st1;*/           //calling default contructor
+	Student st2("Ivan", "Ivanov", 14, 10 + );//calling constructor with arg 
+	student st4 = st2;
+	student st5 = st2;
+	student st6 = st2;
 
-	cout << st1.convert() << endl;
+	cout << st4 c.convert() << endl;
 
 	//st1.name = "Ivan";
 	//st1.surname = "Ivanov";
