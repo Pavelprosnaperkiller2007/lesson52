@@ -27,14 +27,32 @@ public:
 
 	//default constructor with arguments
 	Student(string nm, string surnm, int a, float mark) {
+
+		cout << "constructor with arguments" << endl;
+
 		name = nm;
 		surname = surnm;
 		age = a;
 		avg_mark = mark;
 	}
 
+	Student(string nm, string surnm) {
+		name = nm;
+		surname = surnm;
+	}
 
+	// copy-constructor
+	Student(const Student& student) {
+		cout << "copy constructor" << endl;
+		name = student.name;
+		surname = student.surname;
+		age = student.age;
+		avg_mark = student.avg_mark;
+	}
 
+	~Student() {
+		cout << "destructor" << endl;
+	}
 	string convert() {
 		string msg = "";
 		msg += name;
@@ -47,28 +65,25 @@ public:
 	}
 };
 
+//void test(Student st) {
+//
+//}
+
+Student test() {
+	Student st;
+	return st;
+}
+
 int main() {
-	///*Student st1;*/           //calling default contructor
-	Student st2("Ivan", "Ivanov", 14, 10 + );//calling constructor with arg 
-	student st4 = st2;
-	student st5 = st2;
-	student st6 = st2;
+	//Student st1;           //calling default contructor
+	Student st2("Ivan", "Ivanov", 14, 10);               //calling constructor with arg
+	//Student st3("Dima", "Gus");               //calling constructor with arg
+	//Student st4(st2);
+	//Student st5 = st2;               // calling copy constructor
 
-	cout << st4 c.convert() << endl;
-
-	//st1.name = "Ivan";
-	//st1.surname = "Ivanov";
-	//st1.age = 14;
-	//st1.avg_mark = 10;
-
-	//cout << "Before:" << endl;
-	//cout << st1.convert() << endl;
-
-	//st1.clear();
-
-	//cout << "\nAfter:" << endl;
-	//cout << st1.convert() << endl;
+	//test(st2);
+	Student st = test();
+	cout << st.convert() << endl;
 
 	return 0;
 }
-
